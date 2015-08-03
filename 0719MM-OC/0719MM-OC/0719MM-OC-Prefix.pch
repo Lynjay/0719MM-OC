@@ -1,0 +1,73 @@
+//
+//  0719MM-OC-Prefix.pch
+//  0719MM-OC
+//
+//  Created by gwchina on 15/8/3.
+//  Copyright (c) 2015年 绿网天下. All rights reserved.
+//
+
+#ifndef _719MM_OC__719MM_OC_Prefix_pch
+#define _719MM_OC__719MM_OC_Prefix_pch
+
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+
+#endif
+
+#ifdef __OBJC__
+#import <UIKit/UIKit.h>
+#import <Foundation/Foundation.h>
+#import "BaseViewController.h"
+#endif
+
+#ifdef DEBUG
+#   define DLog(fmt, ...) NSLog((@"%s [Line %d] " fmt), __PRETTY_FUNCTION__, __LINE__, ##__VA_ARGS__);
+#else
+#   define DLog(...)
+#endif
+
+#define IOS7    ([[[UIDevice currentDevice] systemVersion] doubleValue]>=7.0)
+
+// 应用程序托管
+#define AppDelegateInstance	                        ((AppDelegate*)([UIApplication sharedApplication].delegate))
+
+#define kScreenWidth ([UIScreen mainScreen].bounds.size.width)
+#define kScreenHeight ([UIScreen mainScreen].bounds.size.height)
+
+#define kIphone6Height 667  //iPhone6高度
+
+#define UIColorFromRGB(rgbValue, alphaValue) [UIColor \
+colorWithRed:((float)((rgbValue & 0xFF0000) >> 16))/255.0 \
+green:((float)((rgbValue & 0xFF00) >> 8))/255.0 \
+blue:((float)(rgbValue & 0xFF))/255.0 alpha:alphaValue]
+
+#define kBgColor                                 [UIColor colorWithRed:246/255.0 green:246/255.0 blue:246/255.0 alpha:1.0]
+#define kWhiteColor                              [UIColor colorWithRed:252/255.0 green:252/255.0 blue:252/255.0 alpha:1.0]
+#define kLightBlackColor                         [UIColor colorWithRed:50/255.0 green:50/255.0 blue:50/255.0 alpha:1.0f]
+
+//tableview分割线颜色
+#define kColorTableviewCell  UIColorFromRGB(0xeeeeee, 1.0)
+#define kTableViewCellHeight 48
+
+//导航条颜色
+#define kColorNav UIColorFromRGB(0x3A4444, 1.0)
+//主色
+#define kColorMain UIColorFromRGB(0x57cd29, 1.0)
+//底色
+#define kColorBackground UIColorFromRGB(0xf2f7f0, 1.0)
+//底色2
+#define kColorBackground2 UIColorFromRGB(0xffffff, 1.0)
+//边框色
+#define kColorFrame UIColorFromRGB(0xeeeeee, 1.0)
+//标题字色
+#define kColorBlackHighlighted UIColorFromRGB(0x000000, 1.0)
+//内容字色
+#define kColorBlackNormal UIColorFromRGB(0x666666, 1.0)
+//次内容字色
+#define kColorGrayNormal UIColorFromRGB(0x999999, 1.0)
+
+#define kFontSizeBig [UIFont systemFontOfSize:18]
+#define kFontSizeNormal [UIFont systemFontOfSize:16]
+#define kFontSizeLittle [UIFont systemFontOfSize:14]
+#define kFontSizeSmall [UIFont systemFontOfSize:12]
+
